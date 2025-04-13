@@ -1,7 +1,9 @@
+import SearchInput from "../features/search/SearchInput";
+
 function App() {
   return (
     <>
-      <p>App</p>
+      <SearchInput />
     </>
   );
 }

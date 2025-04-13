@@ -1,3 +1,5 @@
+import { TextField } from "@mui/material";
+
 export default function SearchInput() {
-  return <div>SearchInput</div>;
+  return <TextField id="outlined-basic" label="Outlined" variant="outlined" />;
 }
