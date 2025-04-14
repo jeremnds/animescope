@@ -8,6 +8,7 @@ export const SEARCH_ANIME = gql`
         title {
           romaji
           english
+          native
         }
         coverImage {
           large

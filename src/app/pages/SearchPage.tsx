@@ -2,6 +2,7 @@ import { useState } from "react";
 import AnimeList from "../../features/anime/AnimeList";
 import HeroSection from "../../features/search/components/HeroSection";
 import { useAnimeSearch } from "../../features/search/hooks/useAnimeSearch";
+
 export default function SearchPage() {
   const [search, setSearch] = useState("");
   const { searchAnime, data, loading, error } = useAnimeSearch();

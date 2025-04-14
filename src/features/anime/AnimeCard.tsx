@@ -7,7 +7,7 @@ type AnimeCardProps = {
 
 export default function AnimeCard({ anime }: AnimeCardProps) {
   return (
-    <Card>
+    <Card component="a" href={`/anime/${anime.id}`}>
       <CardMedia
         component="img"
         image={anime.coverImage.large}
@@ -15,7 +15,9 @@ export default function AnimeCard({ anime }: AnimeCardProps) {
         sx={{ height: 100, width: 100 }}
       />
       <CardContent>
-        <Typography variant="h6">{anime.title.english}</Typography>
+        <Typography variant="h6">
+          {anime.title.english || anime.title.romaji || anime.title.native}
+        </Typography>
       </CardContent>
     </Card>
   );
