@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const SEARCH_ANIME = gql`
-  query ($search: String) {
-    Page(perPage: 10) {
+  query ($search: String, $perPage: Int) {
+    Page(perPage: $perPage) {
       media(search: $search, type: ANIME) {
         id
         title {

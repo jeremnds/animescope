@@ -4,17 +4,19 @@ import HeroSection from "../../features/search/components/HeroSection";
 import { useAnimeSearch } from "../../features/search/hooks/useAnimeSearch";
 export default function SearchPage() {
   const [search, setSearch] = useState("");
-  const { searchAnime } = useAnimeSearch();
+  const { searchAnime, data, loading, error } = useAnimeSearch();
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
-    searchAnime({ variables: { search: e.target.value } });
+    searchAnime({ variables: { search: e.target.value, perPage: 20 } });
   };
+
+  const media = data?.Page?.media ?? [];
 
   return (
     <>
       <HeroSection onSearch={handleSearch} search={search} />
-      <AnimeList />
+      <AnimeList data={media} loading={loading} error={error} />
     </>
   );
 }
