@@ -1,11 +1,3 @@
-import SearchInput from "../features/search/SearchInput";
-
-function App() {
-  return (
-    <>
-      <SearchInput />
-    </>
-  );
-}
+function App() {}
 
 export default App;

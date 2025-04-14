@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <AppBar position="static" color="primary" elevation={0}>
+    <AppBar position="static" color="secondary" elevation={0}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography variant="h6" component="div">
@@ -19,7 +19,7 @@ export default function Header() {
           <Box
             component="ul"
             display="flex"
-            gap={8}
+            gap={4}
             sx={{
               listStyle: "none",
               marginLeft: "auto",
@@ -29,7 +29,13 @@ export default function Header() {
               <MuiLink
                 component={Link}
                 to="/"
-                style={{ color: "white", textDecoration: "none" }}
+                sx={{
+                  color: "white",
+                  textDecoration: "none",
+                  "&:hover": {
+                    color: "text.secondary",
+                  },
+                }}
               >
                 Search
               </MuiLink>
@@ -38,7 +44,13 @@ export default function Header() {
               <MuiLink
                 component={Link}
                 to="/watchlist"
-                style={{ color: "white", textDecoration: "none" }}
+                sx={{
+                  color: "white",
+                  textDecoration: "none",
+                  "&:hover": {
+                    color: "text.secondary",
+                  },
+                }}
               >
                 My Watchlist
               </MuiLink>
